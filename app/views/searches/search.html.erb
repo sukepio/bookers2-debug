@@ -1,7 +1,21 @@
-<% if @model == 'user' %>
-  <h2>Users search for "<%= @content %>"</h2>
-  <%= render 'users/index', users: @records %>
-<% else %>
-  <h2>Books search for "<%= @content %>"</h2>
-  <%= render 'books/index', books: @records %>
-<% end %>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <% if @model == 'user' %>
+          <h2>Users search for "<%= @content %>"</h2>
+          <% if @records.exists? %>
+            <%= render 'users/index', users: @records %>
+          <% else %>
+            <h4>見つかりませんでした。</h4>
+          <% end %>
+        <% else %>
+          <h2>Books search for "<%= @content %>"</h2>
+          <% if @records.exists? %>
+          <%= render 'books/index', books: @records %>
+          <% else %>
+            <h4>見つかりませんでした。</h4>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>

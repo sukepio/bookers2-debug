@@ -22,13 +22,13 @@ class SearchesController < ApplicationController
       end
     elsif model == 'book'
       if method == 'perfect'
-        Book.where(body: content)
+        Book.where(title: content)
       elsif method == '前方一致'
-        Book.where('body LIKE ?', content+'%')
+        Book.where('title LIKE ?', content+'%')
       elsif method == '後方一致'
-        Book.where('body LIKE ?', '%'+content)
+        Book.where('title LIKE ?', '%'+content)
       else
-        Book.where('body LIKE ?', '%'+content+'%')
+        Book.where('title LIKE ?', '%'+content+'%')
       end
     end
   end
