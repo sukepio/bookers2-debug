@@ -31,6 +31,12 @@ class User < ApplicationRecord
   end
   
   # 住所自動入力
+  
+  validates :postcode, presence: true
+  validates :prefecture_code, presence: true
+  validates :address_city, presence: true
+  validates :address_street, presence: true
+  
   include JpPrefecture
     jp_prefecture :prefecture_code
     
