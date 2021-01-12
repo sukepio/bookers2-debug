@@ -1,0 +1,2 @@
+$("#chat_<%= @chat.id %>").html("<%= j(render "chats/chat_comments", chat: @chat) %>");
+$("#chat_message").val('');
