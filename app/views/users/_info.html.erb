@@ -20,7 +20,7 @@
 
 <% unless current_user == user %>
  <% if current_user.following?(user) && user.following?(current_user) %>
-   <%= link_to "チャットを始める", chat_path(user) %>
+   <%= link_to "チャットを始める", chat_path(user), class:"btn btn-dark mb-2" %><br>
  <% end %>
 <% end %>
 <% unless current_user == user %>
