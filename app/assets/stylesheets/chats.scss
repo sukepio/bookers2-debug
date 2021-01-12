@@ -1,3 +1,50 @@
 // Place all the styles related to the chats controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.message {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.message li{
+  display: flex;
+  margin-bottom: 10px;
+}
+
+li.right-side {
+  flex-direction: row-reverse;
+}
+
+.img {
+  width: 60px;
+  text-align: center;
+}
+.text {
+  margin-top: 2px;
+  background: #eee;
+  border-radius: 6px;
+  padding: 5px 8px;
+  position: relative;
+}
+
+.text::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border: 7px solid transparent;
+  position: absolute;
+}
+
+.left-side .text::before {
+  top: 7px;
+  left: -13px;
+  border-right-color: #eee;
+}
+
+.right-side .text::before {
+  top: 7px;
+  right: -13px;
+  border-left-color: #eee;
+}
