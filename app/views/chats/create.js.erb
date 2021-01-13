@@ -1,2 +1,2 @@
-$(".message").append("<%= j(render "chats/chat_comments", chat: @chat) %>");
+$("#chat").html("<%= j(render "chats/chat_comments", chats: @chat) %>");
 $("#chat_message").val('');

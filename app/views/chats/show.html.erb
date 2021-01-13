@@ -4,26 +4,8 @@
       <h1><%= @user.name %>さんとのチャット</h1> 
       
       <div id="chat">
+        <%= render 'chats/chat_comments', chats: @chats %>
         
-        <% @chats.each do |chat| %>
-          <ul class="message">
-            <% if chat.user_id == current_user.id %>
-             <li class="right-side">
-               <div class="img">
-               <%= attachment_image_tag(chat.user, :profile_image, :fill, 30, 30, fallback: "no_image.jpg", class:'rounded-circle') %>
-               </div>
-               <div class="text"><%= chat.message %></div>
-             </li>
-            <% else %>
-              <li class="left-side">
-                <div class="img">
-                <%= attachment_image_tag(chat.user, :profile_image, :fill, 30, 30, fallback: "no_image.jpg", class:'rounded-circle') %>
-                </div>
-                <div class="text"><%= chat.message %></div>
-              </li>
-            <% end %>
-            <% end %>
-          </ul>
         
       </div>
         <div class="new-chat">
