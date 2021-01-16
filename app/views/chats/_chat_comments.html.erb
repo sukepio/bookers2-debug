@@ -1,19 +1,21 @@
 <% @chats.each do |chat| %>
-          <ul class="message">
-            <% if chat.user_id == current_user.id %>
-             <li class="right-side">
-               <div class="img">
-               <%= attachment_image_tag(chat.user, :profile_image, :fill, 30, 30, fallback: "no_image.jpg", class:'rounded-circle') %>
-               </div>
-               <div class="text"><%= chat.message %></div>
-             </li>
-            <% else %>
-              <li class="left-side">
-                <div class="img">
-                <%= attachment_image_tag(chat.user, :profile_image, :fill, 30, 30, fallback: "no_image.jpg", class:'rounded-circle') %>
-                </div>
-                <div class="text"><%= chat.message %></div>
-              </li>
-            <% end %>
-            </ul>
-        <% end %>
+　<ul class="message">
+    <% if chat.user_id == current_user.id %>
+    <li class="right-side">
+ 　　　<div class="img">
+    　　　<%= attachment_image_tag(chat.user, :profile_image, :fill, 30, 30, fallback: "no_image.jpg", class:'rounded-circle') %>
+        </div>
+        <div class="text"><%= chat.message %></div>
+        <div class="time"><%= chat.created_at.strftime("%-m/%-d") %></div>
+    </li>
+    <% else %>
+    <li class="left-side">
+        <div class="img">
+            <%= attachment_image_tag(chat.user, :profile_image, :fill, 30, 30, fallback: "no_image.jpg", class:'rounded-circle') %>
+        </div>
+        <div class="text"><%= chat.message %></div>
+        <div class="time"><%= chat.created_at.strftime("%-m/%-d") %></div>
+    </li>
+    <% end %>
+　</ul>
+<% end %>

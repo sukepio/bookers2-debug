@@ -2,6 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// チャット風画面CSS
+
+#chat {
+  padding: 10px 0;
+  background-color: skyblue;  
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
 .message {
   margin: 0;
   padding: 0;
@@ -21,12 +30,24 @@ li.right-side {
   width: 60px;
   text-align: center;
 }
+
 .text {
   margin-top: 2px;
   background: #eee;
   border-radius: 6px;
   padding: 5px 8px;
   position: relative;
+}
+
+.right-side .time {
+  padding-top: 2px;
+  padding-right: 6px;
+  height: 5px;
+}
+
+.left-side .time {
+  padding-top: 2px;
+  padding-left: 6px;
 }
 
 .text::before {
