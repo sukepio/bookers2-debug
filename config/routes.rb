@@ -10,6 +10,9 @@ Rails.application.routes.draw do
     member do 
       get :following, :follower
     end
+    collection do
+      post :confirm
+    end
   end
   
   resources :books do 
