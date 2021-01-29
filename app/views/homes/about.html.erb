@@ -3,6 +3,10 @@
     <h1 class="px-3 mx-auto">Welcome to <i class="fas fa-book"></i><strong>Bookers</strong>!</h1>
   </div>
   <div class="row">
+    <%= form_with url: map_request_path, method: :get do |f| %>
+     <%= f.text_field :address %>
+     <%= f.submit '地図表示' %>
+    <% end %>
     <div id='map'></div>
 
     <style>
@@ -13,10 +17,12 @@
     </style>
 
     <script>
+      let mapInstance
+
       function initMap(){
-        var map = new google.maps.Map(document.getElementById('map'),{
+        mapInstance = new google.maps.Map(document.getElementById('map'),{
           center: {lat: -34.397, lng: 150.644},
-          zoom: 8
+          zoom: 10
         });
       }
     </script>
